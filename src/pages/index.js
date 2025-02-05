@@ -31,7 +31,7 @@ export default function Home() {
       <section className="relative overflow-hidden w-full ">
         <div className=" w-full aspect-[3]  hero-image">
           <Image
-            src="/hero.png"
+            src="/Bitmap.png"
             alt="hero"
             layout="fill"
             className="object-cover"
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       <section className="py-12 bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 mt-6 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-6 mt-6 place-items-center">
           {[
             "Bitmap.png",
             "Bitmap.png",
@@ -59,7 +59,7 @@ export default function Home() {
           ].map((img, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center shadow-[0px_4px_10px_rgba(0,0,0,0.5)] w-full max-w-[19rem] h-96 rounded-lg"
+              className="flex flex-col items-center  justify-center shadow-[0px_4px_10px_rgba(0,0,0,0.5)] w-full max-w-[19rem] h-96 rounded-lg"
             >
               <div className="relative w-40 h-40">
                 <Image
