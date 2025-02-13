@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Navbar from "./shared/Navbar";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import NewArrivals from "@/components/NewArrivals";
 
 export default function Home() {
   const featuredRef = useRef(null);
@@ -45,8 +47,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-6 mt-6 place-items-center">
+      <section className="py-12 bg-white ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-6 mt-6 place-items-center container m-auto">
           {[
             "Bitmap.png",
             "Bitmap.png",
@@ -59,7 +61,7 @@ export default function Home() {
           ].map((img, index) => (
             <div
               key={index}
-              className="flex flex-col items-center  justify-center shadow-[0px_4px_10px_rgba(0,0,0,0.5)] w-full max-w-[19rem] h-96 rounded-lg"
+              className="flex flex-col items-center gap-1  justify-center shadow-[0px_4px_10px_rgba(0,0,0,0.5)] w-full max-w-[19rem] h-96 rounded-lg "
             >
               <div className="relative w-40 h-40">
                 <Image
@@ -83,6 +85,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="flex justify-center items-center h-40">
+        <button className="see-all mt-[6rem]">See All</button>
+      </section>
 
       <section ref={featuredRef} className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 mt-6">
@@ -94,7 +99,7 @@ export default function Home() {
               >
                 <div className="relative w-48 h-48">
                   <Image
-                    src={`/${img}`}
+                    src={"/Bitmap.png"}
                     alt="Product"
                     layout="fill"
                     objectFit="cover"
@@ -109,6 +114,40 @@ export default function Home() {
               </div>
             )
           )}
+        </div>
+      </section>
+      <section className="w-full overflow-hidden">
+        <div className="flex">
+          {["brand.png", "brand1.png", "brand2.png"].map((img, index) => (
+            <div key={index} className="flex-1">
+              <div className="relative w-full h-96">
+                <Image
+                  src={`/${img}`}
+                  alt={`Brand ${index + 1}`}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <NewArrivals />
+      <section className="w-full overflow-hidden bg-gray-200">
+        <div className="flex justify-center xl:gap-32 lg:gap-12 sm:gap-8 md:gap-9 ">
+          {["11.png", "11.png", "11.png", "11.png"].map((img, index) => (
+            <div key={index} className="mx-2">
+              <div className="relative xl:w-40 xl:h-44 lg:w-36 lg:h-40 md:w-32 md:h-36 sm:w-28 sm:h-32 w-20 h-24 ">
+                <Image
+                  src={`/${img}`}
+                  alt={`Brand ${index + 1}`}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
